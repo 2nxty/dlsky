@@ -11,23 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <meta
       name="description"
-      content="Easy Download Bluesky videos!"
+      content="Download Bluesky videos!"
     />
     <meta
       property="og:description"
-      content="Easy Download Bluesky videos!"
+      content="Download Bluesky videos!"
     />
     <meta
       name="twitter:description"
-      content="Easy Download Bluesky videos!"
+      content="Download Bluesky videos!"
     />
     <meta
       property="og:image"
-      content="img/share.png"
+      content="share.png"
     />
     <meta
       name="twitter:image"
-      content="img/share.png"
+      content="share.png"
     />
     <link href="res/tailwind.min.css" rel="stylesheet">
     <style>
@@ -58,10 +58,6 @@
         background-color: #13c3ff;
       }
 
-      .bg-orange-apoiase {
-        background-color: #ec4b3c;
-      }
-
       .player {
         max-width: 480px;
         width: 100%;
@@ -72,7 +68,7 @@
     <script src="res/vue.min.js"></script>
     <link
       rel="icon"
-      href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;⬇️&lt;/text&gt;&lt;/svg&gt;"
+      href="img/bdli.png"
     />
   </head>
 
@@ -133,16 +129,16 @@
           :href="downloadLink"
           class="block w-full bg-green-700 text-white text-center py-2 rounded hover:bg-green-800 transition-colors mb-2 font-bold text-xl"
           :download="`${postCid}.mp4`"
-          >Download converted (.mp4)</a
+          >Download (.mp4)</a
         >
 
-        <a
+        <!--a
           v-if="originalDownloadLink"
           :href="originalDownloadLink"
           class="block w-full bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors mb-2 font-bold"
           :download="`${postCid}.ts`"
-          >Download original (.ts)</a
-        >
+          >Download (.ts)</a
+        -->
 
         <a
           v-if="downloadReady && subtitleUrl.length > 0"
