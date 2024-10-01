@@ -191,7 +191,7 @@
         >
           <thead class="bg-blue-bsky text-white">
             <tr>
-              <th class="px-4 py-2 border-b text-left text-xs" colspan="2">
+              <th class="px-4 py-2  text-left text-xs" colspan="2">
                 History
               </th>
             </tr>
@@ -201,21 +201,21 @@
               v-for="(url, index) in urlHistory"
               :key="postCid"
               :class="{
-                'bg-gray-100': index % 2 !== 0,
-                'bg-gray-50': index % 2 === 0
+                'bg-slate-900': index % 2 !== 0,
+                'bg-slate': index % 2 === 0
               }"
             >
-              <td class="px-4 py-2 border-b">
+              <td class="px-4 py-2 ">
                 <a
                   :href="url"
-                  class="text-blue-bsky border-b"
+                  class="text-blue-bsky "
                   target="_blank"
                   rel="noopener"
                   >{{ url }}</a
                 >
               </td>
               <td
-                class="px-2 py-2 border-b text-right"
+                class="px-2 py-2  text-right"
                 style="min-width: 220px"
               >
                 <button
