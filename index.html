@@ -3,31 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSKYDL - Video Downloader for Bluesky</title>
-    <meta property="og:title" content="Video Downloader for Bluesky" />
-    <meta name="twitter:title" content="Video Downloader for Bluesky" />
+    <title>BSKYDL - Bluesky Video Downloader</title>
+    <meta property="og:title" content="BSKYDL - Bluesky Video Downloader" />
+    <meta name="twitter:title" content="BSKYDL - Bluesky Video Downloader" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <meta
       name="description"
-      content="Download Bluesky videos!"
+      content="Easily download videos from Bluesky to your device!"
     />
     <meta
       property="og:description"
-      content="Download Bluesky videos!"
+      content="Easily download videos from Bluesky to your device!"
     />
     <meta
       name="twitter:description"
-      content="Download Bluesky videos!"
+      content="Easily download videos from Bluesky to your device!"
     />
     <meta
       property="og:image"
-      content="share.png"
+      content="https://bskydl.top/share.png"
     />
     <meta
       name="twitter:image"
-      content="share.png"
+      content="https://bskydl.top/share.png"
     />
     <link href="res/tailwind.min.css" rel="stylesheet">
     <style>
@@ -74,15 +74,17 @@
 
   <body class="bg-slate-800 text-white p-4">
     <div class="mt-10 mb-5 flex justify-center items-center">
-      <img class="mb-2" src="img/logo.png" alt="logo" width="300">
+      <a href="">
+        <img class="mb-2" src="img/logo.png" alt="logo" width="300">
+      </a>
     </div>
     <div
       id="app"
       class="max-w-4xl mx-auto p-4 rounded-lg mt-6 bg-slate shadow-md"
     >
       <p class="text-white text-center mb-6">
-        <strong>Easy download Bluesky videos!</strong> Enter
-        a Bluesky video URL:
+        <strong>Download Bluesky videos!</strong> Enter
+        a Bluesky video post URL:
       </p>
 
       <form @submit.prevent="processVideo" class="mb-2 flex">
@@ -127,7 +129,7 @@
         <a
           v-if="downloadReady"
           :href="downloadLink"
-          class="block w-full bg-green-700 text-white text-center py-2 rounded hover:bg-green-800 transition-colors mb-2 font-bold text-xl"
+          class="block w-full bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors mb-2 font-bold text-xl"
           :download="`${postCid}.mp4`"
           >Download (.mp4)</a
         >
@@ -138,7 +140,7 @@
           class="block w-full bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors mb-2 font-bold"
           :download="`${postCid}.ts`"
           >Download (.ts)</a
-        -->
+        >
 
         <a
           v-if="downloadReady && subtitleUrl.length > 0"
@@ -146,7 +148,7 @@
           class="block w-full bg-blue-500 text-white text-center py-2 rounded hover:bg-blue-600 transition-colors mb-2 text-sm font-bold"
           download
           >Download Subtitles ({{subtitleLang}}.vtt)</a
-        >
+        -->
       </div>
 
       <div
@@ -198,7 +200,7 @@
               :key="postCid"
               :class="{
                 'bg-slate-900': index % 2 !== 0,
-                'bg-slate': index % 2 === 0
+                'bg-slate-800': index % 2 === 0
               }"
             >
               <td class="px-4 py-2 ">
@@ -218,7 +220,7 @@
                   class="bg-blue-bsky text-white px-3 py-2 mb-2 rounded-full font-bold hover:bg-blue-600 text-xs shadow"
                   @click="fillAndDownload(url)"
                 >
-                  Re-Download
+                  Download
                 </button>
                 <button
                   class="bg-red-500 text-white px-3 py-2 rounded-full font-bold hover:bg-red-600 ml-2 text-xs shadow"
@@ -233,13 +235,17 @@
       </div>
     </div>
 
+
+    <!--div class="mt-8 mb-5 text-center">
+        <a href="https://antsocial.club">@antsocial.club<a/> - <a href="https://hkr.pw">@hkr.pw<a/>
+    </div-->
     <div class="mt-8 mb-6 text-center text-xs">
       <div class="mb-5">
         This site does not use any cookies or collect any data. This site is not related to Bluesky.
       </div>
     </div>
     <div class="mb-5 text-center text-s uppercase">
-      BSKYDL - 2024
+      <a href="">BSKYDL<a/> - 2024
     </div>
     <script>
       const { createFFmpeg, fetchFile } = FFmpeg;
